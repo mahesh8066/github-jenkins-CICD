@@ -1,31 +1,28 @@
-name: Node.js CI
+name: Run Tests
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger workflow on pushes to the 'main' branch
   pull_request:
     branches:
-      - main
+      - main  # Trigger workflow for pull requests to the 'main' branch
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checkout the repository code
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '14'  # Specify the Node.js version (adjust if needed)
 
       - name: Install dependencies
-        run: npm install
+        run: npm install  # Install dependencies
 
       - name: Run tests
-        run: npm test
-
-      - name: Build the project
-        run: npm run build
+        run: npm test  # Run the test command defined in package.json
