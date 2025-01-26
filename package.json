@@ -4,7 +4,7 @@
   "description": "GitHub Actions workflows to automate testing and deployment of a simple web project.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",                         
+    "test": "npx jest",                         
     "build": "echo 'Building the project...'", 
     "deploy": "echo 'Deploying the project...'"
   },
